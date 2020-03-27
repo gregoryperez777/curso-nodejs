@@ -21,15 +21,9 @@ app.use(express.static(publicPath));
 
 
 // io es la comunicacion con el backend
-let io = sockeIO(server);
+module.exports.io = sockeIO(server);
 
-io.on('connection', (client) => {
-    console.log('Usuario conectado');
-
-    client.on('disconnect', () => {
-        console.log('Usuario desconectado');
-    }); 
-});
+require('./sockets/socket');
 
 server.listen(port, (err) => {
 
