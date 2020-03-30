@@ -20,6 +20,7 @@ class Usuarios {
     }
 
     getPersonasPorSala (idSala) {
+        console.log(this.personas);
         return this.personas.filter(persona => persona.sala === idSala);
     }
 
